@@ -15,5 +15,9 @@ class MainActivity : AppCompatActivity() {
         customize_trip.setOnClickListener {
             startActivity(Intent(this, CustomizeTripActivity::class.java))
         }
+
+        feeling_lucky.setOnClickListener {
+            startActivity(Intent(this, LoaderActivity::class.java))
+        }
     }
 }

@@ -4,9 +4,9 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.lot.android.api.dataClasses.Storage
 import kotlinx.android.synthetic.main.activity_dates.*
 import java.util.*
-
 
 class DatesActivity : AppCompatActivity() {
 
@@ -56,12 +56,11 @@ class DatesActivity : AppCompatActivity() {
 
         fab.setOnClickListener {
             if (editTextDays.text.toString().isNotEmpty()) {
-                val tags = intent.getStringExtra("tags")
+                Storage.start_date_1 = editTextDate1.text.toString()
+                Storage.start_date_2 = editTextDate2.text.toString()
+                Storage.days = editTextDays.text.toString()
+
                 val intent = Intent(this, PassengersActivity::class.java)
-                intent.putExtra("tags", tags)
-                intent.putExtra("start_date_1", editTextDate1.text.toString())
-                intent.putExtra("start_date_2", editTextDate2.text.toString())
-                intent.putExtra("days", editTextDays.text.toString())
                 startActivity(intent)
             }
         }

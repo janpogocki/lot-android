@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.lot.android.R
 import com.lot.android.api.dataClasses.Spot
+import com.lot.android.api.dataClasses.Storage
 import com.lot.android.ui.adapters.CardStackAdapter
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
@@ -39,7 +40,7 @@ class CustomizeTripActivity : AppCompatActivity(), CardStackListener {
 
         if (isCardsStackEmpty()) {
             val intent = Intent(this, DatesActivity::class.java)
-            intent.putExtra("tags", selectedHashtags.joinToString(separator = ","))
+            Storage.tags = selectedHashtags.joinToString(separator = ",")
             startActivity(intent)
         }
     }

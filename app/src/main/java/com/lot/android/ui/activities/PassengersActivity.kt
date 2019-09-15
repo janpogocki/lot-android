@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.lot.android.R
+import com.lot.android.api.dataClasses.Storage
 import kotlinx.android.synthetic.main.activity_passengers.*
 
 class PassengersActivity : AppCompatActivity() {
@@ -21,12 +22,12 @@ class PassengersActivity : AppCompatActivity() {
         removersListeners()
 
         fab.setOnClickListener {
+            Storage.adults = adults
+            Storage.teenagers = teenagers
+            Storage.children = children
+            Storage.infants = infants
+
             val intent = Intent(this, BudgetActivity::class.java)
-            intent.putExtras(getIntent())
-            intent.putExtra("adults", adults)
-            intent.putExtra("teenagers", teenagers)
-            intent.putExtra("children", children)
-            intent.putExtra("infants", infants)
             startActivity(intent)
         }
     }
