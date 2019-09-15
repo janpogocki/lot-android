@@ -33,7 +33,7 @@ class CardStackAdapter(
 
         holder.like.setOnClickListener {
             val setting = SwipeAnimationSetting.Builder()
-                .setDirection(Direction.Left)
+                .setDirection(Direction.Right)
                 .build()
 
             layoutManager.setSwipeAnimationSetting(setting)
@@ -42,14 +42,13 @@ class CardStackAdapter(
 
         holder.dislike.setOnClickListener {
             val setting = SwipeAnimationSetting.Builder()
-                .setDirection(Direction.Right)
+                .setDirection(Direction.Left)
                 .build()
 
             layoutManager.setSwipeAnimationSetting(setting)
             cardStackView.swipe()
         }
     }
-
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val image: ImageView = view.findViewById(R.id.card_image)
