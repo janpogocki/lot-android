@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Storage.clearStorage()
 
         customize_trip.setOnClickListener {
             startActivity(Intent(this, CustomizeTripActivity::class.java))
@@ -20,10 +21,5 @@ class MainActivity : AppCompatActivity() {
         feeling_lucky.setOnClickListener {
             startActivity(Intent(this, PassengersActivity::class.java))
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Storage.clearStorage()
     }
 }

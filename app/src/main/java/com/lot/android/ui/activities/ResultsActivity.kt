@@ -9,6 +9,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.lot.android.R
 import com.lot.android.api.Offer
+import com.lot.android.api.Storage
 import com.lot.android.ui.adapters.ResultsAdapter
 import kotlinx.android.synthetic.main.activity_results.*
 
@@ -17,6 +18,7 @@ class ResultsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_results)
+        Storage.clearStorage()
 
         val jsonString = intent.getStringExtra("json")
         val typeToken = object : TypeToken<List<Offer>>() {}.type

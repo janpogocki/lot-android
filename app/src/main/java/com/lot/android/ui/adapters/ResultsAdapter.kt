@@ -13,6 +13,7 @@ import com.lot.android.R
 import com.lot.android.api.Offer
 import android.app.AlertDialog
 import android.content.DialogInterface
+import android.widget.Toast
 import com.lot.android.ui.activities.ResultsActivity
 import java.lang.Exception
 
@@ -41,6 +42,12 @@ class ResultsAdapter(
             builder.setTitle("Do more with this flight")
             builder.setItems(R.array.do_more, object : DialogInterface.OnClickListener {
                 override fun onClick(p0: DialogInterface?, p1: Int) {
+                    if (p1 == 0) {
+                        Toast.makeText(context, "Just booked!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(context, "Just shared!", Toast.LENGTH_SHORT).show()
+                    }
+
                     (context as ResultsActivity).finish()
                 }
             })
