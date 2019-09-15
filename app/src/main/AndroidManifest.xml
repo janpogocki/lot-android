@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeNoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ui.activities.ResultsActivity"></activity>
+        <activity android:name=".ui.activities.ResultsActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activities.LoaderActivity"
             android:noHistory="true"

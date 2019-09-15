@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.lot.android.R
-import com.lot.android.api.dataClasses.Spot
-import com.lot.android.api.dataClasses.Storage
+import com.lot.android.api.Spot
+import com.lot.android.api.Storage
 import com.lot.android.ui.adapters.CardStackAdapter
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager
 import com.yuyakaido.android.cardstackview.CardStackListener
@@ -64,7 +64,7 @@ class CustomizeTripActivity : AppCompatActivity(), CardStackListener {
     private fun createSpots(): List<Spot> {
         val spots = ArrayList<Spot>()
         spots.add(Spot("cold", R.drawable.cold))
-        /*spots.add(Spot("hot", R.drawable.hot))
+        spots.add(Spot("hot", R.drawable.hot))
         spots.add(Spot("sightseeing", R.drawable.sightseeing))
         spots.add(Spot("adventure", R.drawable.adventure))
         spots.add(Spot("ancient", R.drawable.ancient))
@@ -82,7 +82,7 @@ class CustomizeTripActivity : AppCompatActivity(), CardStackListener {
         spots.add(Spot("crowd", R.drawable.crowd))
         spots.add(Spot("loneliness", R.drawable.loneliness))
         spots.add(Spot("amusement", R.drawable.amusement))
-        spots.add(Spot("contemplation", R.drawable.contemplation))*/
+        spots.add(Spot("contemplation", R.drawable.contemplation))
         return spots
     }
 }

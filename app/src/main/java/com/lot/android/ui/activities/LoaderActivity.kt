@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import com.lot.android.R
-import com.lot.android.api.dataClasses.ApiService
-import com.lot.android.api.dataClasses.Storage
+import com.lot.android.api.ApiService
+import com.lot.android.api.Storage
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -39,6 +39,14 @@ class LoaderActivity : AppCompatActivity() {
 
         val apiService = retrofit.create(ApiService::class.java)
 
+        if (Storage.tags == "") {
+            getLucky(apiService)
+        } else {
+            flights(apiService)
+        }
+    }
+
+    fun flights(apiService: ApiService) {
         disposable = apiService.getFlights(
             Storage.adults.toString(),
             Storage.start_date_1,
@@ -60,8 +68,30 @@ class LoaderActivity : AppCompatActivity() {
             }, { error -> error.printStackTrace() })
     }
 
+    fun getLucky(apiService: ApiService) {
+        disposable = apiService.getLucky(
+            Storage.adults.toString(),
+            Storage.teenagers.toString(),
+            Storage.children.toString(),
+            Storage.infants.toString()
+        )
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeOn(Schedulers.io())
+            .subscribe ({
+                val json = Gson().toJson(it)
+                val intent = Intent(this, ResultsActivity::class.java)
+                intent.putExtra("json", json)
+                startActivity(intent)
+            }, { error -> error.printStackTrace() })
+    }
+
     override fun onPause() {
         super.onPause()
         disposable?.dispose()
+    }
+
+    override fun onBackPressed() {
+        disposable?.dispose()
+        super.onBackPressed()
     }
 }

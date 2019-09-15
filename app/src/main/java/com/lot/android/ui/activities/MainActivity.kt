@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.lot.android.R
+import com.lot.android.api.Storage
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +18,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         feeling_lucky.setOnClickListener {
-            startActivity(Intent(this, LoaderActivity::class.java))
+            startActivity(Intent(this, PassengersActivity::class.java))
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Storage.clearStorage()
     }
 }

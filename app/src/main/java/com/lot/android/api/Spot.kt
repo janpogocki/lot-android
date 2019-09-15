@@ -1,4 +1,4 @@
-package com.lot.android.api.dataClasses
+package com.lot.android.api
 
 data class Spot(
     val hashtag: String,

@@ -43,7 +43,7 @@
                     android:padding="40dp"
                     android:text="500 PLN  "
                     android:textColor="@android:color/white"
-                    app:backgroundTint="@color/colorAccent" />
+                    app:backgroundTint="@color/colorPrimary" />
 
                 <Button
                     android:id="@+id/budget2"
@@ -53,7 +53,7 @@
                     android:padding="40dp"
                     android:text="1500 PLN"
                     android:textColor="@android:color/white"
-                    app:backgroundTint="@color/colorAccent" />
+                    app:backgroundTint="@color/colorPrimary" />
 
             </LinearLayout>
 
@@ -74,7 +74,7 @@
                     android:padding="40dp"
                     android:text="3000 PLN"
                     android:textColor="@android:color/white"
-                    app:backgroundTint="@color/colorAccent" />
+                    app:backgroundTint="@color/colorPrimary" />
 
                 <Button
                     android:id="@+id/budget4"
@@ -84,7 +84,7 @@
                     android:padding="40dp"
                     android:text="6000 PLN"
                     android:textColor="@android:color/white"
-                    app:backgroundTint="@color/colorAccent" />
+                    app:backgroundTint="@color/colorPrimary" />
 
             </LinearLayout>
 

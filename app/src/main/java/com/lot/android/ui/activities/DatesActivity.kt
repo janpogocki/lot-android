@@ -4,7 +4,7 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.lot.android.api.dataClasses.Storage
+import com.lot.android.api.Storage
 import kotlinx.android.synthetic.main.activity_dates.*
 import java.util.*
 

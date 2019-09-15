@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.lot.android.R
-import com.lot.android.api.dataClasses.Storage
+import com.lot.android.api.Storage
 import kotlinx.android.synthetic.main.activity_budget.*
 
 class BudgetActivity : AppCompatActivity() {

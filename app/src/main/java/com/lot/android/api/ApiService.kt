@@ -1,4 +1,4 @@
-package com.lot.android.api.dataClasses
+package com.lot.android.api
 
 import io.reactivex.Observable
 import retrofit2.http.GET

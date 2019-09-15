@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.lot.android.R
-import com.lot.android.api.dataClasses.Storage
+import com.lot.android.api.Storage
 import kotlinx.android.synthetic.main.activity_passengers.*
 
 class PassengersActivity : AppCompatActivity() {
@@ -27,8 +27,13 @@ class PassengersActivity : AppCompatActivity() {
             Storage.children = children
             Storage.infants = infants
 
-            val intent = Intent(this, BudgetActivity::class.java)
-            startActivity(intent)
+            if (Storage.tags == "") {
+                val intent = Intent(this, LoaderActivity::class.java)
+                startActivity(intent)
+            } else {
+                val intent = Intent(this, BudgetActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
