@@ -38,8 +38,8 @@ class CustomizeTripActivity : AppCompatActivity(), CardStackListener {
         }
 
         if (isCardsStackEmpty()) {
-            val intent = Intent() //todo
-            intent.putExtra("tags", selectedHashtags.joinToString())
+            val intent = Intent(this, DatesActivity::class.java)
+            intent.putExtra("tags", selectedHashtags.joinToString(separator = ","))
             startActivity(intent)
         }
     }
@@ -63,7 +63,7 @@ class CustomizeTripActivity : AppCompatActivity(), CardStackListener {
     private fun createSpots(): List<Spot> {
         val spots = ArrayList<Spot>()
         spots.add(Spot("cold", R.drawable.cold))
-        spots.add(Spot("hot", R.drawable.hot))
+        /*spots.add(Spot("hot", R.drawable.hot))
         spots.add(Spot("sightseeing", R.drawable.sightseeing))
         spots.add(Spot("adventure", R.drawable.adventure))
         spots.add(Spot("ancient", R.drawable.ancient))
@@ -81,7 +81,7 @@ class CustomizeTripActivity : AppCompatActivity(), CardStackListener {
         spots.add(Spot("crowd", R.drawable.crowd))
         spots.add(Spot("loneliness", R.drawable.loneliness))
         spots.add(Spot("amusement", R.drawable.amusement))
-        spots.add(Spot("contemplation", R.drawable.contemplation))
+        spots.add(Spot("contemplation", R.drawable.contemplation))*/
         return spots
     }
 }
