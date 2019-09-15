@@ -65,7 +65,7 @@ class LoaderActivity : AppCompatActivity() {
                 val intent = Intent(this, ResultsActivity::class.java)
                 intent.putExtra("json", json)
                 startActivity(intent)
-            }, { error -> error.printStackTrace() })
+            }, { finish() })
     }
 
     fun getLucky(apiService: ApiService) {
@@ -82,7 +82,7 @@ class LoaderActivity : AppCompatActivity() {
                 val intent = Intent(this, ResultsActivity::class.java)
                 intent.putExtra("json", json)
                 startActivity(intent)
-            }, { error -> error.printStackTrace() })
+            }, { finish() })
     }
 
     override fun onPause() {
